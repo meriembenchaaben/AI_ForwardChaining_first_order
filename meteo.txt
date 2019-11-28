@@ -1,0 +1,3 @@
+Pression = 0
+Température = 0
+Vitesse_du_vent = 0

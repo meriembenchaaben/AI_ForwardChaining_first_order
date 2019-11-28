@@ -1,0 +1,85 @@
+si Echelle_de_vigilance_MeteoFrance != "Pas de vigilance particulière" alors Nepassortir = Vrai
+si Temps = "Pluie" alors Parapluie = Vrai
+si Pression < 1015 et Température > 0 alors Temps = "Pluie"
+si Pression < 1015 et Température <= 0 alors Temps = "Neige"
+si Pression >= 1015 et Température > 10 alors Temps = "Beau temps "
+si Pression >= 1015 et Température <= 10 alors Temps = "Brouillards "
+si Echelle_de_Beaufort < 7 alors Echelle_de_vigilance_MeteoFrance = "Pas de vigilance particulière"
+si Echelle_de_Beaufort >= 7 et Echelle_de_Beaufort < 8 alors Echelle_de_vigilance_MeteoFrance = "Soyez attentif" 
+si Echelle_de_Beaufort >= 8 et Echelle_de_Beaufort < 10 alors Echelle_de_vigilance_MeteoFrance = "Soyez très vigilant"
+si Echelle_de_Beaufort >= 10 alors Echelle_de_vigilance_MeteoFrance = "Une vigilance absolue s'impose"
+si Vitesse_du_vent < 1 alors Echelle_de_Beaufort = 0
+si Vitesse_du_vent > 1 et Vitesse_du_vent <= 5 alors Echelle_de_Beaufort = 1
+si Vitesse_du_vent > 5 et Vitesse_du_vent <= 11 alors Echelle_de_Beaufort = 2
+si Vitesse_du_vent > 11 et Vitesse_du_vent <= 19 alors Echelle_de_Beaufort = 3
+si Vitesse_du_vent > 19 et Vitesse_du_vent <= 28 alors Echelle_de_Beaufort = 4
+si Vitesse_du_vent > 28 et Vitesse_du_vent <= 38 alors Echelle_de_Beaufort = 5
+si Vitesse_du_vent > 38 et Vitesse_du_vent <= 49 alors Echelle_de_Beaufort = 6
+si Vitesse_du_vent > 49 et Vitesse_du_vent <= 61 alors Echelle_de_Beaufort = 7
+si Vitesse_du_vent > 61 et Vitesse_du_vent <= 74 alors Echelle_de_Beaufort = 8
+si Vitesse_du_vent > 75 et Vitesse_du_vent <= 88 alors Echelle_de_Beaufort = 9
+si Vitesse_du_vent > 88 et Vitesse_du_vent <= 102 alors Echelle_de_Beaufort = 10 
+si Vitesse_du_vent > 102 et Vitesse_du_vent <= 117 alors Echelle_de_Beaufort = 11 
+si Vitesse_du_vent > 117 alors Echelle_de_Beaufort = 12 
+si Indice_de_refroidissement_eolien < -27 alors Risque_gelure = Vrai 
+si Indice_de_refroidissement_eolien >= -27 alors Risque_gelure = Faux 
+si Vitesse_du_vent <= 10 et Température >= 0 alors Indice_de_refroidissement_eolien = -3 
+si Vitesse_du_vent <= 10 et Température < 0 et Température >= -5 alors Indice_de_refroidissement_eolien = -9 
+si Vitesse_du_vent <= 10 et Température < -5 et Température >= -10 alors Indice_de_refroidissement_eolien = -15 
+si Vitesse_du_vent <= 10 et Température < -10 et Température >= -15 alors Indice_de_refroidissement_eolien = -21 
+si Vitesse_du_vent <= 10 et Température < -15 et Température >= -20 alors Indice_de_refroidissement_eolien = -27 
+si Vitesse_du_vent <= 10 et Température < -20 et Température >= -25 alors Indice_de_refroidissement_eolien = -33 
+si Vitesse_du_vent <= 10 et Température < -25 et Température >= -30 alors Indice_de_refroidissement_eolien = -39 
+si Vitesse_du_vent <= 10 et Température < -30 et Température >= -35 alors Indice_de_refroidissement_eolien = -45 
+si Vitesse_du_vent <= 10 et Température < -35 et Température >= -40 alors Indice_de_refroidissement_eolien = -51 
+si Vitesse_du_vent <= 10 et Température < -40 alors Indice_de_refroidissement_eolien = -57
+si Vitesse_du_vent > 10 et Vitesse_du_vent <= 20 et Température >= 0 alors Indice_de_refroidissement_eolien = -5 
+si Vitesse_du_vent > 10 et Vitesse_du_vent <= 20 et Température < 0 et Température >= -5 alors Indice_de_refroidissement_eolien = -12 
+si Vitesse_du_vent > 10 et Vitesse_du_vent <= 20 et Température < -5 et Température >= -10 alors Indice_de_refroidissement_eolien = -18 
+si Vitesse_du_vent > 10 et Vitesse_du_vent <= 20 et Température < -10 et Température >= -15 alors Indice_de_refroidissement_eolien = -24 
+si Vitesse_du_vent > 10 et Vitesse_du_vent <= 20 et Température < -15 et Température >= -20 alors Indice_de_refroidissement_eolien = -30 
+si Vitesse_du_vent > 10 et Vitesse_du_vent <= 20 et Température < -20 et Température >= -25 alors Indice_de_refroidissement_eolien = -37 
+si Vitesse_du_vent > 10 et Vitesse_du_vent <= 20 et Température < -25 et Température >= -30 alors Indice_de_refroidissement_eolien = -43 
+si Vitesse_du_vent > 10 et Vitesse_du_vent <= 20 et Température < -30 et Température >= -35 alors Indice_de_refroidissement_eolien = -49 
+si Vitesse_du_vent > 10 et Vitesse_du_vent <= 20 et Température < -35 et Température >= -40 alors Indice_de_refroidissement_eolien = -56
+si Vitesse_du_vent > 10 et Vitesse_du_vent <= 20 et Température > -40 alors Indice_de_refroidissement_eolien = -62 
+si Vitesse_du_vent > 20 et Vitesse_du_vent <= 30 et Température >= 0 alors Indice_de_refroidissement_eolien = -6 
+si Vitesse_du_vent > 20 et Vitesse_du_vent <= 30 et Température < 0 et Température >= -5 alors Indice_de_refroidissement_eolien = -13 
+si Vitesse_du_vent > 20 et Vitesse_du_vent <= 30 et Température < -5 et Température >= -10 alors Indice_de_refroidissement_eolien = -20 
+si Vitesse_du_vent > 20 et Vitesse_du_vent <= 30 et Température < -10 et Température >= -15 alors Indice_de_refroidissement_eolien = -26 
+si Vitesse_du_vent > 20 et Vitesse_du_vent <= 30 et Température < -15 et Température >= -20 alors Indice_de_refroidissement_eolien = -33 
+si Vitesse_du_vent > 20 et Vitesse_du_vent <= 30 et Température < -20 et Température >= -25 alors Indice_de_refroidissement_eolien = -39 
+si Vitesse_du_vent > 20 et Vitesse_du_vent <= 30 et Température < -25 et Température >= -30 alors Indice_de_refroidissement_eolien = -45 
+si Vitesse_du_vent > 20 et Vitesse_du_vent <= 30 et Température < -30 et Température >= -35 alors Indice_de_refroidissement_eolien = -52 
+si Vitesse_du_vent > 20 et Vitesse_du_vent <= 30 et Température < -35 et Température >= -40 alors Indice_de_refroidissement_eolien = -59
+si Vitesse_du_vent > 20 et Vitesse_du_vent <= 30 et Température > -40 alors Indice_de_refroidissement_eolien = -65
+si Vitesse_du_vent > 30 et Vitesse_du_vent <= 40 et Température >= 0 alors Indice_de_refroidissement_eolien = -7
+si Vitesse_du_vent > 30 et Vitesse_du_vent <= 40 et Température < 0 et Température >= -5 alors Indice_de_refroidissement_eolien = -14
+si Vitesse_du_vent > 30 et Vitesse_du_vent <= 40 et Température < -5 et Température >= -10 alors Indice_de_refroidissement_eolien = -21
+si Vitesse_du_vent > 30 et Vitesse_du_vent <= 40 et Température < -10 et Température >= -15 alors Indice_de_refroidissement_eolien = -27 
+si Vitesse_du_vent > 30 et Vitesse_du_vent <= 40 et Température < -15 et Température >= -20 alors Indice_de_refroidissement_eolien = -34 
+si Vitesse_du_vent > 30 et Vitesse_du_vent <= 40 et Température < -20 et Température >= -25 alors Indice_de_refroidissement_eolien = -41 
+si Vitesse_du_vent > 30 et Vitesse_du_vent <= 40 et Température < -25 et Température >= -30 alors Indice_de_refroidissement_eolien = -48 
+si Vitesse_du_vent > 30 et Vitesse_du_vent <= 40 et Température < -30 et Température >= -35 alors Indice_de_refroidissement_eolien = -54 
+si Vitesse_du_vent > 30 et Vitesse_du_vent <= 40 et Température < -35 et Température >= -40 alors Indice_de_refroidissement_eolien = -61 
+si Vitesse_du_vent > 30 et Vitesse_du_vent <= 40 et Température > -40 alors Indice_de_refroidissement_eolien = -68 
+si Vitesse_du_vent > 40 et Vitesse_du_vent <= 50 et Température >= 0 alors Indice_de_refroidissement_eolien = -8 
+si Vitesse_du_vent > 40 et Vitesse_du_vent <= 50 et Température < 0 et Température >= -5 alors Indice_de_refroidissement_eolien = -15 
+si Vitesse_du_vent > 40 et Vitesse_du_vent <= 50 et Température < -5 et Température >= -10 alors Indice_de_refroidissement_eolien = -22 
+si Vitesse_du_vent > 40 et Vitesse_du_vent <= 50 et Température < -10 et Température >= -15 alors Indice_de_refroidissement_eolien = -29 
+si Vitesse_du_vent > 40 et Vitesse_du_vent <= 50 et Température < -15 et Température >= -20 alors Indice_de_refroidissement_eolien = -35 
+si Vitesse_du_vent > 40 et Vitesse_du_vent <= 50 et Température < -20 et Température >= -25 alors Indice_de_refroidissement_eolien = -42 
+si Vitesse_du_vent > 40 et Vitesse_du_vent <= 50 et Température < -25 et Température >= -30 alors Indice_de_refroidissement_eolien = -49 
+si Vitesse_du_vent > 40 et Vitesse_du_vent <= 50 et Température < -30 et Température >= -35 alors Indice_de_refroidissement_eolien = -56 
+si Vitesse_du_vent > 40 et Vitesse_du_vent <= 50 et Température < -35 et Température >= -40 alors Indice_de_refroidissement_eolien = -63 
+si Vitesse_du_vent > 40 et Vitesse_du_vent <= 50 et Température > -40 alors Indice_de_refroidissement_eolien = -69 
+si Vitesse_du_vent > 50 et Température >= 0 alors Indice_de_refroidissement_eolien = -9 
+si Vitesse_du_vent > 50 et Température < 0 et Température >= -5 alors Indice_de_refroidissement_eolien = -16 
+si Vitesse_du_vent > 50 et Température < -5 et Température >= -10 alors Indice_de_refroidissement_eolien = -23 
+si Vitesse_du_vent > 50 et Température < -10 et Température >= -15 alors Indice_de_refroidissement_eolien = -30
+si Vitesse_du_vent > 50 et Température < -15 et Température >= -20 alors Indice_de_refroidissement_eolien = -36 
+si Vitesse_du_vent > 50 et Température < -20 et Température >= -25 alors Indice_de_refroidissement_eolien = -43 
+si Vitesse_du_vent > 50 et Température < -25 et Température >= -30 alors Indice_de_refroidissement_eolien = -50 
+si Vitesse_du_vent > 50 et Température < -30 et Température >= -35 alors Indice_de_refroidissement_eolien = -57 
+si Vitesse_du_vent > 50 et Température < -35 et Température >= -40 alors Indice_de_refroidissement_eolien = -64 
+si Vitesse_du_vent > 50 et Température > -40 alors Indice_de_refroidissement_eolien = -71 

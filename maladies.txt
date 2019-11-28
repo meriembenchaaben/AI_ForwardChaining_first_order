@@ -1,0 +1,4 @@
+Douleur = "Gorge"
+Fièvre = Vrai
+Sexe = "Homme"
+

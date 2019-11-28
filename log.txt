@@ -1,0 +1,16 @@
+--- execution :2019-11-28 21:40:25 :
+    --chainnage avant--
+        -sans but-
+            conclusions found are
+                Echelle_de_Beaufort = 12 concluded from rule number : 23
+                Echelle_de_vigilance_MeteoFrance = "Pas de vigilance particulière" concluded from rule number : 7
+
+--- execution :2019-11-28 21:40:55 :
+    --chainnage avant--
+        -avec but-
+            goal is Echelle_de_Beaufort = 12
+            Goal found !!
+            rules applied are : 
+                Echelle_de_Beaufort = 12 <- Vitesse_du_vent > 117.
+                
+
